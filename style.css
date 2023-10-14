@@ -1,0 +1,211 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background:#8A2BE2;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.container h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 50px;
+    font-style: italic;
+    text-shadow: 5px 5px 5px black;
+}
+.container .board{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    margin: 50px;
+}
+
+.container .board .cell{
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    box-shadow: 5px 5px 10px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CSS for X */
+.cell.x {
+    color: white;
+    font-size: 50px;
+}
+
+/* CSS for O */
+.cell.o {
+    color: white;
+    font-size: 50px;
+}
+
+.container .board .cell:hover{
+    opacity: 0.5;
+}
+
+.container .board .cell:active{
+    transform: scale(0.9);
+}
+
+.container .scores{
+    display: flex;
+    gap: 50px;
+    font-size: 30px;
+    color: white;
+    text-shadow: 3px 3px 5px black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container .popup{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    background: white;
+    border-radius: 10px;
+    position: absolute;
+}
+
+
+.container .popup .rply-btn {
+    align-items: center;
+  background: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  text-shadow: 2px 2px 5px black;
+  color: #FFFFFF;
+  display: block;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 19px 24px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+
+.container .popup .rply-btn:active{
+    transform: scale(0.9);
+}
+.container .popup .rply-btn:hover{
+   box-shadow: 0 0 15px rgba(0, 0, 0, 0.195);
+}
+
+
+
+.container .popup h2{
+    color: black;
+    margin: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+
+/* CSS */
+.container .rst-btn {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+.container .rst-btn:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.container .rst-btn:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.container .rst-btn:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+footer{
+    width: 100%;
+    height: 100px;
+    background: transparent;
+    box-shadow: 0 0 10px black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer p{
+    color: white;
+    padding: 2% 10px;
+}
+footer .contact{
+}
+
+footer .contact p a{
+    text-decoration: none;
+    color: white;
+    background:linear-gradient(145deg,red,green 50%,blue);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+    .container{
+        height: 110vh;
+    }
+    .container .popup .rply-btn {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
